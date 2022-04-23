@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+	x:Class="MobyClient.ContentTemplates.FlyoutItemTemplate"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	<VisualStateManager.VisualStateGroups>
+		<VisualStateGroup
+			x:Name="CommonStates">
+			<VisualState
+				x:Name="Normal">
+				<VisualState.Setters>
+					<Setter
+						TargetName="FlyoutItemTemplateFrame"
+						Property="BackgroundColor"
+						Value="{StaticResource Primary}" />
+				</VisualState.Setters>
+			</VisualState>
+			<VisualState
+				x:Name="Selected">
+				<VisualState.Setters>
+					<Setter
+						TargetName="FlyoutItemTemplateFrame"
+						Property="BackgroundColor"
+						Value="Blue" />
+				</VisualState.Setters>
+			</VisualState>
+			<VisualState
+				x:Name="Disabled">
+				<VisualState.Setters />
+			</VisualState>
+		</VisualStateGroup>
+	</VisualStateManager.VisualStateGroups>
+	<Frame
+		x:Name="FlyoutItemTemplateFrame"
+		x:DataType="{x:Type FlyoutItem}"
+		BorderColor="LightGrey"
+		CornerRadius="5"
+		HeightRequest="44"
+		Margin="5,0,0,0"
+		Padding="8,0">
+		<Grid
+			ColumnDefinitions="Auto,*">
+			<Image
+				Grid.Column="0"
+				HeightRequest="24"
+				HorizontalOptions="End"
+				Source="{Binding Icon}"
+				VerticalOptions="Center"
+				WidthRequest="24" />
+			<Label
+				Grid.Column="1"
+				FontFamily="SegoeUiSemibold"
+				FontSize="20"
+				Margin="15,0,0,2"
+				Text="{Binding Title}"
+				TextColor="White"
+				VerticalOptions="Center" />
+		</Grid>
+	</Frame>
+</Grid>

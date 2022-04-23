@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+	x:Class="MobyClient.Shells.DesktopShell"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:pages="clr-namespace:MobyClient.Pages"
+	xmlns:viewModels="clr-namespace:MobyClient.ViewModels"
+	x:DataType="viewModels:ShellViewModel">
+	<Shell.MenuBarItems>
+		<MenuBarItem
+			Text="Test">
+		</MenuBarItem>
+	</Shell.MenuBarItems>
+	<Shell.ToolbarItems>
+		<ToolbarItem
+			Text="Toolbar Text" />
+	</Shell.ToolbarItems>
+	<FlyoutItem
+		Icon="{StaticResource Dashboard}"
+		Title="{Binding Dashboard.Title}">
+		<ShellContent
+			ContentTemplate="{DataTemplate pages:PageDashboard}" />
+	</FlyoutItem>
+</Shell>
